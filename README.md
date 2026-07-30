@@ -120,7 +120,7 @@ Run the notebook from top to bottom to launch the application in the default web
 
 The notebooks include configurations that use the optional Stage 3 model checker with `Qwen/Qwen3-4B-Instruct-2507`.
 
-The rule-based demo does not require Hugging Face API access. The quantitative and qualitative evaluation notebook check for a token in the HF_TOKEN environment variable and asks for one if the environment variable is not set.
+The rule-based demo does not require Hugging Face API access. The quantitative and qualitative evaluation notebook check for a token in the HF_TOKEN environment variable and ask for one if the environment variable is not set.
 
 Hugging Face Inference Providers apply account-dependent usage limits and inference credits. A free account is generally sufficient for running the demo and testing a small number of commands. However, the complete quantitative evaluation sends considerably more API requests and may exceed the available free allowance.
 
