@@ -1,0 +1,62 @@
+####################################################################################################
+Loaded dataset
+####################################################################################################
+Total examples after cleanup: 1730
+
+
+Class distribution:
+intent
+IMPREGNATE      222
+CLEAN           217
+REPAIR          206
+MOVE            203
+PICK_UP         195
+GO_ON_WALK      182
+DRY             175
+PUT_DOWN        170
+GET_NEW_TOOL    160
+Name: count, dtype: int64
+####################################################################################################
+Intent Classification Results
+####################################################################################################
+Training examples: 1297
+Test examples:     433
+
+
+####################################################################################################
+Random Test Split Evaluation
+####################################################################################################
+Accuracy: 0.9584
+
+Classification report:
+              precision    recall  f1-score   support
+
+       CLEAN       1.00      0.98      0.99        54
+         DRY       1.00      0.91      0.95        44
+GET_NEW_TOOL       0.97      0.95      0.96        40
+  GO_ON_WALK       0.98      1.00      0.99        45
+  IMPREGNATE       0.95      1.00      0.97        56
+        MOVE       0.92      0.88      0.90        51
+     PICK_UP       0.96      0.90      0.93        49
+    PUT_DOWN       0.89      1.00      0.94        42
+      REPAIR       0.96      1.00      0.98        52
+
+    accuracy                           0.96       433
+   macro avg       0.96      0.96      0.96       433
+weighted avg       0.96      0.96      0.96       433
+
+
+Confusion matrix labels:
+['CLEAN' 'DRY' 'GET_NEW_TOOL' 'GO_ON_WALK' 'IMPREGNATE' 'MOVE' 'PICK_UP'
+ 'PUT_DOWN' 'REPAIR']
+
+Confusion matrix:
+[[53  0  0  0  0  0  1  0  0]
+ [ 0 40  0  1  2  0  1  0  0]
+ [ 0  0 38  0  1  0  0  0  1]
+ [ 0  0  0 45  0  0  0  0  0]
+ [ 0  0  0  0 56  0  0  0  0]
+ [ 0  0  0  0  0 45  0  5  1]
+ [ 0  0  1  0  0  4 44  0  0]
+ [ 0  0  0  0  0  0  0 42  0]
+ [ 0  0  0  0  0  0  0  0 52]]

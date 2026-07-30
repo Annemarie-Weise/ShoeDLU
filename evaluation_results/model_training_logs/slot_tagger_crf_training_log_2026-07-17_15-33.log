@@ -1,0 +1,123 @@
+####################################################################################################
+Loaded slot-label dataset
+####################################################################################################
+Total token rows after cleanup: 16836
+Total sentences: 1730
+
+Intent distribution by sentence:
+intent
+IMPREGNATE      222
+CLEAN           217
+REPAIR          206
+MOVE            203
+PICK_UP         195
+GO_ON_WALK      182
+DRY             175
+PUT_DOWN        170
+GET_NEW_TOOL    160
+Name: count, dtype: int64
+
+Label distribution:
+label
+O                             8472
+B-SHOE_TYPE                   1097
+B-COLOR                        912
+B-OBJECT_ID                    843
+B-LOCATION_RELATION            420
+B-OBJECT_LOCATION              409
+B-NEXT_TO_RELATION             398
+I-NEXT_TO_RELATION             387
+B-BEFORE_SENTENCE_SPLIT        358
+I-OBJECT_LOCATION              326
+B-MATERIAL                     319
+B-TARGET_LOCATION_RELATION     270
+B-TARGET_LOCATION              269
+I-REPAIR_TOOL_TYPE             246
+B-CLEANING_TOOL_TYPE           240
+B-REPAIR_TOOL_TYPE             239
+I-TARGET_LOCATION              231
+B-IMPREGNATION_TOOL_TYPE       210
+B-AFTER_SENTENCE_SPLIT         123
+B-REPAIR_TARGET                113
+B-THRESHOLD                    106
+B-CLEANING_STATUS               91
+B-TARGET_NEXT_TO_RELATION       91
+I-TARGET_NEXT_TO_RELATION       89
+B-WALK_PLACE                    81
+B-WALK_LENGTH                   60
+B-SHOE_HEIGHT                   54
+B-IMPREGNATION_STATUS           53
+I-THRESHOLD                     44
+B-WALK_WEATHER                  43
+B-MATERIAL_STATUS               42
+B-DRY_STATUS                    41
+B-SOLE_STATUS                   40
+I-WALK_WEATHER                  38
+B-DIRT_TYPE                     36
+I-CLEANING_STATUS               29
+I-WALK_PLACE                     8
+I-IMPREGNATION_STATUS            8
+Name: count, dtype: int64
+####################################################################################################
+CRF Slot Tagging Results
+####################################################################################################
+Training sentences: 1297
+Test sentences:     433
+
+
+####################################################################################################
+Random Test Split Evaluation
+####################################################################################################
+Sentences: 433
+
+Token-level evaluation without O label:
+Weighted F1: 0.9669
+
+Classification report:
+                            precision    recall  f1-score   support
+
+    B-AFTER_SENTENCE_SPLIT     0.8966    0.7879    0.8387        33
+   B-BEFORE_SENTENCE_SPLIT     1.0000    0.9789    0.9894        95
+         B-CLEANING_STATUS     0.8696    1.0000    0.9302        20
+      B-CLEANING_TOOL_TYPE     1.0000    1.0000    1.0000        63
+                   B-COLOR     0.9956    1.0000    0.9978       224
+               B-DIRT_TYPE     1.0000    1.0000    1.0000        10
+              B-DRY_STATUS     1.0000    0.8889    0.9412         9
+     B-IMPREGNATION_STATUS     1.0000    1.0000    1.0000        10
+  B-IMPREGNATION_TOOL_TYPE     1.0000    1.0000    1.0000        54
+       B-LOCATION_RELATION     0.9394    0.8532    0.8942       109
+                B-MATERIAL     1.0000    1.0000    1.0000        88
+         B-MATERIAL_STATUS     1.0000    1.0000    1.0000        10
+        B-NEXT_TO_RELATION     0.9485    0.9583    0.9534        96
+               B-OBJECT_ID     1.0000    1.0000    1.0000       201
+         B-OBJECT_LOCATION     0.9902    0.9439    0.9665       107
+           B-REPAIR_TARGET     1.0000    1.0000    1.0000        25
+        B-REPAIR_TOOL_TYPE     0.9825    0.9825    0.9825        57
+             B-SHOE_HEIGHT     1.0000    1.0000    1.0000        10
+               B-SHOE_TYPE     0.9931    0.9931    0.9931       290
+             B-SOLE_STATUS     0.8571    1.0000    0.9231         6
+         B-TARGET_LOCATION     0.8649    0.9846    0.9209        65
+B-TARGET_LOCATION_RELATION     0.7778    0.9545    0.8571        66
+ B-TARGET_NEXT_TO_RELATION     0.7917    0.7600    0.7755        25
+               B-THRESHOLD     1.0000    1.0000    1.0000        33
+             B-WALK_LENGTH     1.0000    0.9333    0.9655        15
+              B-WALK_PLACE     1.0000    1.0000    1.0000        20
+            B-WALK_WEATHER     1.0000    1.0000    1.0000        10
+         I-CLEANING_STATUS     1.0000    0.8750    0.9333         8
+     I-IMPREGNATION_STATUS     1.0000    1.0000    1.0000         1
+        I-NEXT_TO_RELATION     0.9457    0.9560    0.9508        91
+         I-OBJECT_LOCATION     1.0000    0.9383    0.9682        81
+        I-REPAIR_TOOL_TYPE     1.0000    1.0000    1.0000        57
+         I-TARGET_LOCATION     0.8636    1.0000    0.9268        57
+ I-TARGET_NEXT_TO_RELATION     0.7917    0.7917    0.7917        24
+               I-THRESHOLD     1.0000    1.0000    1.0000        14
+              I-WALK_PLACE     1.0000    1.0000    1.0000         1
+            I-WALK_WEATHER     1.0000    1.0000    1.0000         8
+
+                 micro avg     0.9643    0.9689    0.9666      2093
+                 macro avg     0.9597    0.9616    0.9595      2093
+              weighted avg     0.9666    0.9689    0.9669      2093
+
+
+All labels learned by the CRF:
+['O', 'B-WALK_LENGTH', 'B-COLOR', 'B-SHOE_TYPE', 'B-WALK_WEATHER', 'I-WALK_WEATHER', 'B-OBJECT_ID', 'B-LOCATION_RELATION', 'B-OBJECT_LOCATION', 'I-OBJECT_LOCATION', 'B-NEXT_TO_RELATION', 'I-NEXT_TO_RELATION', 'B-IMPREGNATION_TOOL_TYPE', 'B-CLEANING_TOOL_TYPE', 'B-TARGET_LOCATION_RELATION', 'B-TARGET_LOCATION', 'B-BEFORE_SENTENCE_SPLIT', 'B-THRESHOLD', 'I-THRESHOLD', 'I-TARGET_LOCATION', 'B-CLEANING_STATUS', 'I-CLEANING_STATUS', 'B-DRY_STATUS', 'B-REPAIR_TOOL_TYPE', 'B-TARGET_NEXT_TO_RELATION', 'I-TARGET_NEXT_TO_RELATION', 'B-MATERIAL', 'B-SHOE_HEIGHT', 'B-MATERIAL_STATUS', 'B-REPAIR_TARGET', 'I-REPAIR_TOOL_TYPE', 'B-IMPREGNATION_STATUS', 'B-WALK_PLACE', 'I-WALK_PLACE', 'B-DIRT_TYPE', 'B-AFTER_SENTENCE_SPLIT', 'B-SOLE_STATUS', 'I-IMPREGNATION_STATUS']
