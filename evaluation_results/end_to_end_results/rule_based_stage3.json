@@ -1,0 +1,2272 @@
+{
+  "parser_name": "rule_based_stage3",
+  "model_check": true,
+  "evaluation_seed": 205,
+  "number_of_cases": 70,
+  "results": [
+    {
+      "id": "basic_01",
+      "command": "pick up the wet black canvas boot",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_02",
+      "command": "pick up the shoe next to boot_1",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_03",
+      "command": "pick up the brown rubber sneaker on the middle shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_04",
+      "command": "move the white leather boot to the middle shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "boot_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "middle_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": false,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_05",
+      "command": "move the white rubber sneaker inside the floor box to the middle shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "middle_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_06",
+      "command": "move the blue sandal next to boot_2",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sandal_2",
+        "tool_id": null,
+        "next_to_id": "boot_2",
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sandal_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "boot_2"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_07",
+      "command": "put down the black canvas boot on the middle shelf",
+      "setup_results": [
+        {
+          "command": "pick up the black canvas boot",
+          "result": {
+            "intent": "PICK_UP",
+            "original_intent": "PICK_UP",
+            "object_id": "boot_1",
+            "tool_id": null,
+            "next_to_id": null,
+            "location": null,
+            "tool_type": null,
+            "created_object_id": null,
+            "status": "EXECUTED",
+            "success": true,
+            "object_resolution": "UNIQUE_MATCH",
+            "tool_resolution": null,
+            "target_resolution": null,
+            "object_candidate_ids": [
+              "boot_1"
+            ],
+            "tool_candidate_ids": [],
+            "target_candidate_ids": [],
+            "model_corrected_intent": false,
+            "model_corrected_object": false,
+            "model_corrected_tool": false
+          }
+        }
+      ],
+      "result": {
+        "intent": "PUT_DOWN",
+        "original_intent": "PUT_DOWN",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "middle_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_08",
+      "command": "put down the sandal next to sneaker_1",
+      "setup_results": [
+        {
+          "command": "pick up the green canvas sandal",
+          "result": {
+            "intent": "PICK_UP",
+            "original_intent": "PICK_UP",
+            "object_id": "sandal_3",
+            "tool_id": null,
+            "next_to_id": null,
+            "location": null,
+            "tool_type": null,
+            "created_object_id": null,
+            "status": "EXECUTED",
+            "success": true,
+            "object_resolution": "UNIQUE_MATCH",
+            "tool_resolution": null,
+            "target_resolution": null,
+            "object_candidate_ids": [
+              "sandal_3"
+            ],
+            "tool_candidate_ids": [],
+            "target_candidate_ids": [],
+            "model_corrected_intent": false,
+            "model_corrected_object": false,
+            "model_corrected_tool": false
+          }
+        }
+      ],
+      "result": {
+        "intent": "PUT_DOWN",
+        "original_intent": "PUT_DOWN",
+        "object_id": "sandal_3",
+        "tool_id": null,
+        "next_to_id": "sneaker_1",
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": false,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sandal_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "sneaker_1"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_09",
+      "command": "dry the wet brown rubber sneaker",
+      "setup_results": [],
+      "result": {
+        "intent": "DRY",
+        "original_intent": "DRY",
+        "object_id": "sneaker_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_10",
+      "command": "dry boot_1",
+      "setup_results": [],
+      "result": {
+        "intent": "DRY",
+        "original_intent": "DRY",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_11",
+      "command": "clean boot_2 with cleaner_1",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "boot_2",
+        "tool_id": "cleaner_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [
+          "cleaner_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_12",
+      "command": "clean the shoe next to boot_1 with brush_1",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "sneaker_1",
+        "tool_id": "brush_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": false,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [
+          "brush_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_13",
+      "command": "clean the green canvas sandal with brush_2",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "sandal_3",
+        "tool_id": "brush_2",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sandal_3"
+        ],
+        "tool_candidate_ids": [
+          "brush_2"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_14",
+      "command": "impregnate the dry leather shoe with spray_1",
+      "setup_results": [],
+      "result": {
+        "intent": "IMPREGNATE",
+        "original_intent": "IMPREGNATE",
+        "object_id": "boot_2",
+        "tool_id": "spray_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [
+          "spray_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_15",
+      "command": "impregnate the grassy sneaker with spray_1",
+      "setup_results": [],
+      "result": {
+        "intent": "IMPREGNATE",
+        "original_intent": "IMPREGNATE",
+        "object_id": "sneaker_2",
+        "tool_id": "spray_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [
+          "spray_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_16",
+      "command": "repair the sole of boot_2 with the sole glue with 30% damage",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "boot_2",
+        "tool_id": "sole_glue_3",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [
+          "sole_glue_3"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_17",
+      "command": "repair the sole of sneaker_1 with the sole hammer",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "sneaker_1",
+        "tool_id": "sole_hammer_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [
+          "sole_hammer_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_18",
+      "command": "go on a short walk in the park with sneaker_2 in rainy weather",
+      "setup_results": [],
+      "result": {
+        "intent": "GO_ON_WALK",
+        "original_intent": "GO_ON_WALK",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_19",
+      "command": "clean the shoe next to boot_1 with cleaner_1",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "sneaker_1",
+        "tool_id": "cleaner_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": false,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [
+          "cleaner_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "basic_20",
+      "command": "go hiking at the construction site wearing the brown sneaker",
+      "setup_results": [],
+      "result": {
+        "intent": "GO_ON_WALK",
+        "original_intent": "GO_ON_WALK",
+        "object_id": "sneaker_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_01",
+      "command": "Could you please grab the soaked black boot for me?",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_02",
+      "command": "Please take the muddy brown rubber trainer from the middle shelf.",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_03",
+      "command": "Could you place the white rubber shoe from the floor box on the middle shelf?",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "middle_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_04",
+      "command": "Please move the blue sandal so that it is beside the leather boot.",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sandal_2",
+        "tool_id": null,
+        "next_to_id": "boot_2",
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sandal_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "boot_2"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_05",
+      "command": "Take the wet boot off the top shelf and put it into the drying area.",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "PICK_UP",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "drying_area",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": true,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_06",
+      "command": "Please leave the green canvas sandal on the middle shelf.",
+      "setup_results": [
+        {
+          "command": "pick up the green canvas sandal",
+          "result": {
+            "intent": "PICK_UP",
+            "original_intent": "PICK_UP",
+            "object_id": "sandal_3",
+            "tool_id": null,
+            "next_to_id": null,
+            "location": null,
+            "tool_type": null,
+            "created_object_id": null,
+            "status": "EXECUTED",
+            "success": true,
+            "object_resolution": "UNIQUE_MATCH",
+            "tool_resolution": null,
+            "target_resolution": null,
+            "object_candidate_ids": [
+              "sandal_3"
+            ],
+            "tool_candidate_ids": [],
+            "target_candidate_ids": [],
+            "model_corrected_intent": false,
+            "model_corrected_object": false,
+            "model_corrected_tool": false
+          }
+        }
+      ],
+      "result": {
+        "intent": "PUT_DOWN",
+        "original_intent": "PUT_DOWN",
+        "object_id": "sandal_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "middle_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sandal_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_07",
+      "command": "Could you put the boot I am holding down beside the brown rubber sneaker?",
+      "setup_results": [
+        {
+          "command": "pick up the wet black canvas boot",
+          "result": {
+            "intent": "PICK_UP",
+            "original_intent": "PICK_UP",
+            "object_id": "boot_1",
+            "tool_id": null,
+            "next_to_id": null,
+            "location": null,
+            "tool_type": null,
+            "created_object_id": null,
+            "status": "EXECUTED",
+            "success": true,
+            "object_resolution": "UNIQUE_MATCH",
+            "tool_resolution": null,
+            "target_resolution": null,
+            "object_candidate_ids": [
+              "boot_1"
+            ],
+            "tool_candidate_ids": [],
+            "target_candidate_ids": [],
+            "model_corrected_intent": false,
+            "model_corrected_object": false,
+            "model_corrected_tool": false
+          }
+        }
+      ],
+      "result": {
+        "intent": "PUT_DOWN",
+        "original_intent": "PUT_DOWN",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": "sneaker_3",
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "sneaker_3"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_08",
+      "command": "The blue leather sneaker is still wet, so please dry it.",
+      "setup_results": [],
+      "result": {
+        "intent": "DRY",
+        "original_intent": "DRY",
+        "object_id": "sneaker_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_09",
+      "command": "Could you make the muddy black canvas boot dry?",
+      "setup_results": [],
+      "result": {
+        "intent": "DRY",
+        "original_intent": "DRY",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_10",
+      "command": "Please give the very dirty green canvas sandal a wash using brush_2.",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "sandal_3",
+        "tool_id": "brush_2",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sandal_3"
+        ],
+        "tool_candidate_ids": [
+          "brush_2"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_11",
+      "command": "Use cleaner_1 to clean the muddy white leather boot.",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "boot_2",
+        "tool_id": "cleaner_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [
+          "cleaner_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_12",
+      "command": "Could you remove the grass from the slightly dirty white rubber trainer with brush_1?",
+      "setup_results": [],
+      "result": {
+        "intent": null,
+        "original_intent": null,
+        "object_id": null,
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "NO_ACTION",
+        "success": null,
+        "object_resolution": null,
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_13",
+      "command": "Please waterproof the wet black canvas boot using spray_1.",
+      "setup_results": [],
+      "result": {
+        "intent": "IMPREGNATE",
+        "original_intent": "IMPREGNATE",
+        "object_id": "boot_1",
+        "tool_id": "spray_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [
+          "spray_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_14",
+      "command": "Work with the spray to protect the unprotected sneaker.",
+      "setup_results": [],
+      "result": {
+        "intent": "IMPREGNATE",
+        "original_intent": "IMPREGNATE",
+        "object_id": "sneaker_2",
+        "tool_id": "spray_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [
+          "spray_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_15",
+      "command": "Could you fix the loose sole of the dry white leather boot with the least damaged sole glue?",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "boot_2",
+        "tool_id": "sole_glue_3",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [
+          "sole_glue_3"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": true
+      },
+      "error": null
+    },
+    {
+      "id": "natural_16",
+      "command": "Please repair the worn sole of the wet blue leather trainer using the sole hammer.",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "sneaker_1",
+        "tool_id": "sole_hammer_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [
+          "sole_hammer_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_17",
+      "command": "Use sole_hammer_1 to fix the damaged sole of the red rubber sandal.",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "sandal_1",
+        "tool_id": "sole_hammer_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sandal_1"
+        ],
+        "tool_candidate_ids": [
+          "sole_hammer_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_18",
+      "command": "Take the white trainer for a quick walk through the park while it is raining.",
+      "setup_results": [],
+      "result": {
+        "intent": "GO_ON_WALK",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": true,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_19",
+      "command": "Please go for a short hike at the construction site in sunny weather wearing the brown rubber sneaker.",
+      "setup_results": [],
+      "result": {
+        "intent": "GO_ON_WALK",
+        "original_intent": "GO_ON_WALK",
+        "object_id": "sneaker_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "natural_20",
+      "command": "Could you take the high white leather boot on a regular walk along the street in nice weather?",
+      "setup_results": [],
+      "result": {
+        "intent": "GO_ON_WALK",
+        "original_intent": "PICK_UP",
+        "object_id": "boot_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": true,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_01",
+      "command": "pick up the wet blue leather sneaker next to the wet black canvas boot on the top shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_02",
+      "command": "pick up the wet black canvas boot next to the clean blue leather sneaker on the top shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_03",
+      "command": "pick up the white rubber sneaker in the floor box next to the red rubber sandal with the damaged sole",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_04",
+      "command": "move the dry blue rubber sandal with the worn sole next to the high white leather boot on the bottom shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sandal_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "bottom_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sandal_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_05",
+      "command": "move the low wet canvas boot beside the clean blue leather sneaker to the middle shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": "sneaker_1",
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "sneaker_1"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_06",
+      "command": "move the slightly dirty white rubber sneaker next to the wet brown rubber sneaker on the middle shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "middle_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_07",
+      "command": "put down the held green canvas sandal next to the wet brown rubber sneaker on the middle shelf",
+      "setup_results": [
+        {
+          "command": "pick up the green canvas sandal",
+          "result": {
+            "intent": "PICK_UP",
+            "original_intent": "PICK_UP",
+            "object_id": "sandal_3",
+            "tool_id": null,
+            "next_to_id": null,
+            "location": null,
+            "tool_type": null,
+            "created_object_id": null,
+            "status": "EXECUTED",
+            "success": true,
+            "object_resolution": "UNIQUE_MATCH",
+            "tool_resolution": null,
+            "target_resolution": null,
+            "object_candidate_ids": [
+              "sandal_3"
+            ],
+            "tool_candidate_ids": [],
+            "target_candidate_ids": [],
+            "model_corrected_intent": false,
+            "model_corrected_object": false,
+            "model_corrected_tool": false
+          }
+        }
+      ],
+      "result": {
+        "intent": "PUT_DOWN",
+        "original_intent": "PUT_DOWN",
+        "object_id": "sandal_3",
+        "tool_id": null,
+        "next_to_id": "sneaker_3",
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sandal_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "sneaker_3"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_08",
+      "command": "put down the held wet black canvas boot next to the clean blue leather sneaker on the top shelf",
+      "setup_results": [
+        {
+          "command": "pick up the wet black canvas boot",
+          "result": {
+            "intent": "PICK_UP",
+            "original_intent": "PICK_UP",
+            "object_id": "boot_1",
+            "tool_id": null,
+            "next_to_id": null,
+            "location": null,
+            "tool_type": null,
+            "created_object_id": null,
+            "status": "EXECUTED",
+            "success": true,
+            "object_resolution": "UNIQUE_MATCH",
+            "tool_resolution": null,
+            "target_resolution": null,
+            "object_candidate_ids": [
+              "boot_1"
+            ],
+            "tool_candidate_ids": [],
+            "target_candidate_ids": [],
+            "model_corrected_intent": false,
+            "model_corrected_object": false,
+            "model_corrected_tool": false
+          }
+        }
+      ],
+      "result": {
+        "intent": "PUT_DOWN",
+        "original_intent": "PUT_DOWN",
+        "object_id": "boot_1",
+        "tool_id": null,
+        "next_to_id": "sneaker_1",
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "sneaker_1"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_09",
+      "command": "dry the wet brown rubber sneaker on the middle shelf whose sole is loose",
+      "setup_results": [],
+      "result": {
+        "intent": "DRY",
+        "original_intent": "DRY",
+        "object_id": "sneaker_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_3"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_10",
+      "command": "clean the white rubber sneaker next to the red rubber sandal with the brush that is 34% full",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "sneaker_2",
+        "tool_id": "brush_2",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [
+          "brush_2"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_11",
+      "command": "clean the dry white leather boot on the bottom shelf using the cleaner next to the brush that is 20% full",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "boot_2",
+        "tool_id": "cleaner_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [
+          "cleaner_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_12",
+      "command": "impregnate the wet black canvas boot next to the clean blue leather sneaker with the spray next to cleaner_1",
+      "setup_results": [],
+      "result": {
+        "intent": "IMPREGNATE",
+        "original_intent": "CLEAN",
+        "object_id": "boot_1",
+        "tool_id": "spray_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [
+          "spray_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": true,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_13",
+      "command": "repair the worn sole of the dry blue rubber sandal on the bottom shelf with the sole glue with 30% damage next to the sole hammer",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "sandal_2",
+        "tool_id": "sole_glue_3",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sandal_2"
+        ],
+        "tool_candidate_ids": [
+          "sole_glue_3"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_14",
+      "command": "repair the damaged sole of the red rubber sandal next to the white rubber sneaker in the floor box with the sole hammer beside the sole glue with 30% damage",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "sandal_1",
+        "tool_id": "sole_hammer_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sandal_1"
+        ],
+        "tool_candidate_ids": [
+          "sole_hammer_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": true
+      },
+      "error": null
+    },
+    {
+      "id": "complex_ref_15",
+      "command": "go on a short walk in the park with the white rubber sneaker next to the red rubber sandal in the floor box in rainy weather",
+      "setup_results": [],
+      "result": {
+        "intent": "GO_ON_WALK",
+        "original_intent": "GO_ON_WALK",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_01",
+      "command": "pick up the wet shoe",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_02",
+      "command": "pick up the white shoe",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": "sneaker_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_03",
+      "command": "clean the muddy shoe with brush_1",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "boot_1",
+        "tool_id": "brush_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [
+          "brush_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_04",
+      "command": "dry the blue shoe",
+      "setup_results": [],
+      "result": {
+        "intent": "DRY",
+        "original_intent": "DRY",
+        "object_id": "sneaker_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_05",
+      "command": "repair the boot with sole_glue_3",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "boot_1",
+        "tool_id": "sole_glue_3",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": false,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_1"
+        ],
+        "tool_candidate_ids": [
+          "sole_glue_3"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_06",
+      "command": "impregnate the unprotected shoe with spray_1",
+      "setup_results": [],
+      "result": {
+        "intent": "IMPREGNATE",
+        "original_intent": "IMPREGNATE",
+        "object_id": "sneaker_2",
+        "tool_id": "spray_1",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_2"
+        ],
+        "tool_candidate_ids": [
+          "spray_1"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_07",
+      "command": "move the sandal to the middle shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sandal_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "middle_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "sandal_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_08",
+      "command": "clean the green canvas sandal with a brush",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "sandal_3",
+        "tool_id": "brush_2",
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "UNIQUE_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sandal_3"
+        ],
+        "tool_candidate_ids": [
+          "brush_2"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": true
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_09",
+      "command": "repair the sneaker with a sole glue",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": "sneaker_3",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "NO_ACTION",
+        "success": null,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "AMBIGUOUS",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "sneaker_3"
+        ],
+        "tool_candidate_ids": [
+          "sole_glue_1",
+          "sole_glue_2",
+          "sole_glue_3"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_10",
+      "command": "move the red rubber sandal next to the sneaker",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "sandal_1",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "NO_ACTION",
+        "success": null,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "AMBIGUOUS",
+        "object_candidate_ids": [
+          "sandal_1"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "sneaker_1",
+          "sneaker_2",
+          "sneaker_3"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_ambiguous_11",
+      "command": "move the white leather boot next to the sandal",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "boot_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "NO_ACTION",
+        "success": null,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "AMBIGUOUS",
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [
+          "sandal_1",
+          "sandal_2",
+          "sandal_3"
+        ],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_unresolvable_12",
+      "command": "pick up the yellow shoe",
+      "setup_results": [],
+      "result": {
+        "intent": "PICK_UP",
+        "original_intent": "PICK_UP",
+        "object_id": null,
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "NO_ACTION",
+        "success": null,
+        "object_resolution": "NO_MATCH",
+        "tool_resolution": null,
+        "target_resolution": null,
+        "object_candidate_ids": [],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_unresolvable_13",
+      "command": "clean the black leather boot with the brush that is 90% full",
+      "setup_results": [],
+      "result": {
+        "intent": "CLEAN",
+        "original_intent": "CLEAN",
+        "object_id": "boot_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "NO_ACTION",
+        "success": null,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": "NO_MATCH",
+        "target_resolution": null,
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_unresolvable_14",
+      "command": "repair the red canvas sneaker with a sole glue",
+      "setup_results": [],
+      "result": {
+        "intent": "REPAIR",
+        "original_intent": "REPAIR",
+        "object_id": null,
+        "tool_id": null,
+        "next_to_id": null,
+        "location": null,
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "NO_ACTION",
+        "success": null,
+        "object_resolution": "NO_MATCH",
+        "tool_resolution": "AMBIGUOUS",
+        "target_resolution": null,
+        "object_candidate_ids": [],
+        "tool_candidate_ids": [
+          "sole_glue_1",
+          "sole_glue_2",
+          "sole_glue_3"
+        ],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": false,
+        "model_corrected_tool": false
+      },
+      "error": null
+    },
+    {
+      "id": "truly_unresolvable_15",
+      "command": "move the blue leather boot to the bottom shelf",
+      "setup_results": [],
+      "result": {
+        "intent": "MOVE",
+        "original_intent": "MOVE",
+        "object_id": "boot_2",
+        "tool_id": null,
+        "next_to_id": null,
+        "location": "bottom_shelf",
+        "tool_type": null,
+        "created_object_id": null,
+        "status": "EXECUTED",
+        "success": true,
+        "object_resolution": "UNIQUE_MATCH",
+        "tool_resolution": null,
+        "target_resolution": "UNIQUE_MATCH",
+        "object_candidate_ids": [
+          "boot_2"
+        ],
+        "tool_candidate_ids": [],
+        "target_candidate_ids": [],
+        "model_corrected_intent": false,
+        "model_corrected_object": true,
+        "model_corrected_tool": false
+      },
+      "error": null
+    }
+  ]
+}

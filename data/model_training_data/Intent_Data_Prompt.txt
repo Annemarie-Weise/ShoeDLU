@@ -1,0 +1,315 @@
+You are helping me create a synthetic training dataset for an intent classifier used in a grounded natural-language shoe-world application.
+
+
+Generate approximately 200 unique English commands for each of the nine supported intent classes listed below. Complex actions should have more commands than simple actions.
+Each command must have exactly one primary intent. The language should resemble commands that a user could give to an assistant operating in the described shoe world.
+The dataset will later be inspected and corrected manually, so prioritize linguistic diversity while keeping the intended label identifiable.
+
+Supported intents
+#################
+
+Use exactly these intent labels:
+- PICK_UP: pick up or take a shoe or tool into the agent's hand
+- PUT_DOWN: put down an object currently being held, optionally at a specified location or next to another object
+- MOVE: move or relocate an object from its current position to another location
+- CLEAN: clean a shoe, optionally using a cleaning utensil
+- IMPREGNATE: waterproof, protect, wax, cream, or impregnate a shoe
+- DRY: dry a wet or damp shoe
+- REPAIR: repair the sole or material of a shoe using an appropriate repair tool
+- GET_NEW_TOOL: fetch or obtain a fresh or replacement tool
+- GO_ON_WALK: go on a walk or run while wearing a specified shoe
+Do not create additional labels
+
+World description
+#################
+The world contains shoes, tools, storage locations, and walk settings.
+
+Shoes
+-----
+A shoe may be described using any combination of:
+- Type: sandal, sneaker, boot, or the generic term shoe
+- Color: red, green, blue, yellow, black, white, brown
+- Material: leather, suede, rubber, canvas
+- Height: low, mid, high
+- Cleaning state: clean, a little dirty, medium dirty, dirty, very dirty
+- Material state: good, scratched, cracked
+- Sole state: intact, worn, loose, damaged
+- Protection state: protected, partly protected, unprotected
+- Dry state: dry, wet
+- Dirt type: mud, dust, sand, grass, oil
+
+Natural aliases and variations may also be used, for example:
+- sneakers, trainers, running shoes
+- boots, sandals
+- tan or beige for brown
+- navy or dark blue for blue
+- fabric or cloth for canvas
+- tall for high and small for low
+- spotless, slightly dirty, filthy
+- waterproof, partially protected, not waterproof
+- damp or soaked
+- muddy, dusty, sandy, grassy, oily
+
+Tools
+-----
+Cleaning tools:
+- cleaner
+- brush
+- rag
+Impregnation tools:
+- spray
+- cream
+Repair tools:
+- sole glue
+- sole hammer
+- needle and yarn
+
+Use natural aliases where appropriate, such as cleaning cloth, towel, shoe cleaner, waterproofing spray, wax, glue, hammer, needle and thread.
+
+Locations
+---------
+
+Objects may be located:
+- on the top/middle/bottom shelf
+- in or on the floor box
+- in the drying area
+- in the tool area
+- in the agent's hand
+Natural variants such as floor, ground, drying spot, drying corner, tool box, tool zone, rack, and in hand are allowed.
+
+Walk properties
+---------------
+Walk locations may include:
+- park
+- beach
+- forest
+- street
+- city
+- playground
+- meadow
+- field
+- garden
+- garage
+- workshop
+- parking lot
+- construction site
+- trail
+Walk lengths may be short, medium, or long, including aliases such as brief, quick, regular, normal, extended, or far.
+Weather may be sunny or rainy, including phrases such as in the sun, in dry weather, in the rain, in wet weather, or during stormy weather.
+
+Object references
+-----------------
+Commands should use a mixture of reference styles.
+
+Attribute descriptions:
+Examples:
+- the red leather boot
+- the wet canvas sneaker
+- the dirty low sandal
+- the shoe with the damaged sole
+
+Object IDs:
+Some commands should refer to explicit object IDs. Plausible ID forms include:
+- boot_2
+- sneaker_12
+- shoe_6
+-...
+Do not use IDs in every sentence. Mix ID-based references with ordinary descriptions.
+
+Spatial and nested references:
+Include commands that identify objects through their relationships to other objects, for example:
+- the sandal next to the blue boot
+- the brush beside the cleaner in the tool area
+- the sneaker next to the red boot on the middle shelf
+- the shoe on the floor next to rag_4
+- the canvas boot beside the sandal in the drying area
+Some examples should contain nested descriptions. They must remain understandable even when more than one spatial phrase occurs.
+For MOVE and PUT_DOWN commands, earlier relations can identify the object, while the final spatial phrase can describe its destination.
+Example:
+move the green sandal next to the boot onto the top shelf
+Here, "next to the boot" identifies the sandal, and "onto the top shelf" is the movement target.
+
+Numerical tool constraints
+--------------------------
+Include around special examples in which a tool is selected by a numerical state.
+Cleaning and impregnation utensils have a remaining fullness percentage. Examples:
+- a cleaner that is at least 30% full
+- the brush with more than 40 percent left
+- a spray with minimum fullness of 60%
+- cream that is not below 50% full
+
+Repair tools have a damage percentage. Examples:
+- sole glue that is at most 25% damaged
+- a hammer with less than 30 percent damage
+- needle and yarn that is no more than 15% damaged
+- a repair tool whose damage does not exceed 40%
+
+Use percentages between 10% and 90%. Vary the expression of the comparison:
+
+- at least
+- minimum
+- more than
+- above
+- over
+- not below
+- at most
+- maximum
+- less than
+
+These numerical constraints should mainly occur in CLEAN, IMPREGNATE, and REPAIR examples.
+
+Linguistic diversity
+--------------------
+Use a broad range of formulations:
+- direct imperatives
+- polite requests
+- questions
+- short commands
+- longer descriptive commands
+- commands with object IDs
+- commands with “next to” or “beside” relations
+- commands with nested references
+- commands with omitted optional information
+- natural synonyms for the main action
+
+Some difficult examples may contain words associated with another action as background context, but the primary request must remain clear. For example:
+- clean the boot before putting it away -> CLEAN
+- get a new brush before cleaning the shoe -> GET_NEW_TOOL
+
+Do not generate commands that genuinely request two separate actions.
+
+Seed examples
+-------------
+
+Use the following examples as style and label demonstrations. Generate new commands rather than copying these:
+
+PICK_UP:
+pick up the red leather boot
+take the green sneaker from the middle shelf
+grab the sandal next to the blue boot
+hold the black canvas sneaker_7
+pick up rag_4 from the tool area
+can you get the white low sneaker
+take the sole hammer beside the brown sandal
+lift the wet boot from the drying area
+pick up the shoe next to cleaner_3 on the floor
+please take boot_12 in your hand
+
+PUT_DOWN:
+put the held shoe on the top shelf
+set the boot down in the drying area
+put the rag back in the tool area
+drop the sandal next to the blue sneaker on the floor
+place the object in your hand on the bottom shelf
+set down boot_5 in the floor box
+put down cleaner_2 beside brush_4 in the tool area
+leave the sneaker on the middle shelf
+release the sole hammer in the tool area
+put the canvas sneaker down in the drying area next to the black boot
+
+MOVE:
+move the brown canvas boot to the drying area
+bring the cream next to the brown sandal to the floor
+move the boot next to the sneaker onto the middle shelf
+relocate the brush from the tool area to the bottom shelf
+move the yellow sandal beside the boot into the floor box
+please move wet_boot_11 to the middle shelf
+move the dirty shoe closer to the tool area
+put the sole glue on the top shelf
+transfer the low sneaker from the top shelf to the drying area
+move the object next to rag_4 on the floor to the bottom shelf
+
+CLEAN:
+clean the green canvas boot next to the brown sandal
+give the black sandal a quick clean using the rag
+scrub the dirty spots on the white sandal
+clean the mud off the red sneaker
+brush the sand from the white leather sandal
+wash the wet boot_14  with the cleaner
+wipe the brown sneaker with the rag next to spray_7
+clean the sneaker using a brush that is at least 30% full
+use cleaner_4 with more than 40 percent left on the blue boot
+clean the sandal with the cleaner when its fullness is over 50%
+
+IMPREGNATE
+protect the black leather sandals with the spray
+add a protective layer to the leather sneaker
+apply cream to the white leather boots
+make the canvas boot waterproof
+spray the yellow sneaker before walking in the rain
+impregnate sneaker_5 using cream
+protect the boot next to the brown sandal with spray_7
+waterproof the green sneaker using a spray that is at least 60% full
+apply cream with more than 40 percent left to the black shoe
+impregnate the sneaker if the cream's fullness is not below 50%
+
+DRY:
+dry the blue sneaker next to the brown sandal
+make black_boot_5 dry again
+air-dry the white sandal
+let the wet boot dry
+remove the mosture from the canvas sneaker
+put the soaked sandal in the drying process
+dry the sneaker in the drying area
+the sandal beside the brown boot got wet, dry it
+please dry wet_boot_11
+dry the brown sandal after the rainy walk
+
+REPAIR:
+repair the sole of the red sandal with sole glue
+use the sole hammer to fix the brown sandal_3
+repair the rubber sneaker with needle and yarn
+glue the sole back onto the yellow canvas sandal
+stitch the damaged material of the blue sneaker
+fix the cracked leather boot
+repair the shoe next to spray_7 using sole_glue_3
+repair the boot using glue that is at most 25% damaged
+fix the sandal with a hammer whose damage is below 30 percent
+repair the material using needle and yarn with no more than 15% damage
+
+GET_NEW_TOOL:
+take a spare rag from the box
+fetch a replacment spray
+pick up a new brush from the tool area
+bring me a fresh cleaner
+I need a new cleaner_8
+get another container of shoe cream
+bring a replacement sole hammer
+fetch fresh needle and yarn
+the current spray is empty, get a new one
+ we need a fresh tool before continuing with the boot
+
+GO_ON_WALK:
+go on a run with the green mid sandal_3
+take the canvas sneaker outside for a short walk
+please take brown_sandal_4 on a walk
+walk through the city in rainy weather with the green boots
+go for a walk in the field wearing the brown canvas sandals
+go on a long walk with the black sandal in sunny weather
+take the blue sneaker for a quick walk through the park
+wear the high leather boots on a medium walk in the forest
+go for a run on the street with sneaker_12
+take the yellow sandal for a brief walk on the beach in sunny weather
+
+Distribution requirements
+-------------------------
+
+For each intent, include a mixture of:
+- around 30% simple commands
+- around 25% commands containing multiple shoe attributes
+- around 20% commands containing object IDs
+- around 15% commands containing locations or next-to references
+- around 10% challenging commands containing nested references, conditions, or numerical constraints where appropriate
+Avoid excessive repetition of sentence templates. Do not merely replace colors or object names in otherwise identical sentences.
+
+
+Output format
+-------------
+
+Return only semicolon-separated CSV text with "command;intent".
+Each following line must contain one command and one uppercase intent label:
+pick up the red boot;PICK_UP
+clean the dirty sneaker with the brush;CLEAN
+
+Do not wrap the output in Markdown and do not include any text before or after the CSV.
+

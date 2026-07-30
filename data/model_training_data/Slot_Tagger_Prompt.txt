@@ -1,0 +1,511 @@
+You are helping me label training data for a CRF slot tagger for a shoe-world command parser.
+Your task is to label every token in the attached csv in the labelcolumn  in each command with BIO slot labels. Use exactly one label per token. Tokens that do not belong to any slot should stay at `O`.
+The output must preserve the original token order. Return the result as a downloadable csv with the same columns as the given csv.
+
+Do not explain your answer unless I explicitly ask for an explanation.
+The world values can be given as one token with _ or as splitted words.
+
+Domain
+######
+
+The world contains shoes, cleaning utensils, impregnation utensils, repair tools, locations, and walk settings.
+
+Valid shoe types include:
+- sandal
+- sneaker
+- boot
+- aliases such as sandals, sneakers, trainers, running shoes, boots
+
+Valid colors include:
+- red, green, blue, yellow, black, white, brown
+- aliases such as tan, beige, navy, dark blue, light blue,...
+
+Valid shoe materials include:
+- leather, suede, rubber, canvas
+- aliases such as fabric, cloth,...
+
+Valid shoe heights include:
+- low, mid, high
+- aliases such as small for low, tall for high,...
+- context dependent you can also label medium, short etc. here
+
+Valid cleaning statuses include:
+- clean
+- a little dirty
+- medium dirty
+- dirty
+- very dirty
+- aliases such as spotless, slightly dirty, little dirty, somewhat dirty, moderately dirty, filthy, really dirty, extremely dirty
+
+Valid impregnation statuses include:
+- protected
+- partly protected
+- unprotected
+- aliases such as waterproof, waterproofed, partially protected, not protected, not waterproof
+
+Valid material statuses include:
+- good
+- scratched
+- cracked
+- aliases such as okay, fine, undamaged, damaged, broken
+
+Valid sole statuses include:
+- intact
+- worn
+- loose
+- damaged
+- aliases such as okay, fine, undamaged, used, unstable, broken
+
+Valid dry statuses include:
+- dry
+- wet
+- aliases such as damp, soaked
+
+Valid dirt types include:
+- mud, dust, sand, grass, oil
+- aliases such as muddy, dusty, sandy, grassy, oily
+
+Valid locations include:
+- top shelf
+- middle shelf
+- bottom shelf
+- floor/floor box/ground
+- drying area/drying spot/drying corner
+- tool area/tool box/tool zone
+- hand/in hand
+
+For world semantics:
+- Shelf locations use the spatial relation `on`.
+- Unstructured places such as floor box, drying area, tool area, and hand use the spatial relation `inside`.
+- However, in natural language the user may say either "on the floor" or "in the floor box". Label the phrase according to its role in the sentence, not according to final normalized world relation.
+
+Valid cleaning tool types include:
+- cleaner
+- brush
+- rag
+- aliases such as cloth, towel, cleaning cloth, cleaning liquid, shoe cleaner
+
+Valid impregnation tool types include:
+- spray
+ cream
+- aliases such as waterproofing spray, protector spray, shoe cream, wax,...
+
+Valid repair tool types include:
+- sole glue
+- sole hammer
+- needle and yarn
+- aliases such as glue, hammer, needle, yarn, thread,...
+
+Valid repair targets include:
+- sole
+- underside
+- material
+- fabric
+- surface
+- upper
+...
+
+Valid walk lengths include:
+- short, medium, long
+- aliases such as brief, quick, fast, normal, regular, far, extended,...
+
+Valid walk places include:
+- park, beach, forest, street, city, playground, meadow, field, garden, garage, workshop, parking lot, construction site, trail
+- aliases such as road, sidewalk, woods, seaside, yard,...
+
+Valid weather values include:
+- sunny
+- rainy
+- aliases such as sun, dry weather, nice weather, rain, wet weather, stormy,...
+
+
+Labels
+######
+
+Use these labels:
+
+O
+Outside any slot.
+
+B-OBJECT_ID
+An object ID token, if it follows the generated ID schema like `shoe_1`, `repair_tool_2`, `cleaning_utensil_3`, etc.
+
+B-SHOE_TYPE
+Shoe type such as sandal, sneaker, boot.
+
+B-COLOR
+Shoe color.
+
+B-MATERIAL
+Shoe material such as canvas, suede, rubber, leather.
+
+B-SHOE_HEIGHT
+Shoe height such as high, low, mid, tall, small.
+
+B-CLEANING_STATUS
+First token of a shoe cleaning status.
+
+I-CLEANING_STATUS
+Continuation token of a multi-token cleaning status.
+
+B-IMPREGNATION_STATUS
+First token of an impregnation status.
+
+I-IMPREGNATION_STATUS
+Continuation token of a multi-token impregnation status.
+
+B-MATERIAL_STATUS
+Material condition such as good, scratched, cracked, damaged, broken.
+
+B-DRY_STATUS
+Dry status such as wet, dry, damp, soaked.
+
+B-DIRT_TYPE
+Dirt type such as mud, muddy, sand, sandy, grass, oil, oily, dust, dusty.
+
+B-SOLE_STATUS
+Sole condition such as worn, loose, intact, damaged, broken.
+
+B-CLEANING_TOOL_TYPE
+Cleaning utensil type such as brush, cleaner, rag, cloth, towel.
+
+B-IMPREGNATION_TOOL_TYPE
+Impregnation utensil type such as spray, cream, wax.
+
+B-REPAIR_TOOL_TYPE
+First token of a repair tool type.
+
+I-REPAIR_TOOL_TYPE
+Continuation token of a multi-token repair tool type.
+
+B-REPAIR_TARGET
+Repair target such as sole, underside, material, fabric, surface, upper.
+
+B-THRESHOLD
+A numeric threshold or percentage number, such as 30, 30%, 80, 80%....
+
+I-THRESHOLD
+Continuation of a threshold phrase, such as `%` or `percent`.
+
+B-OBJECT_LOCATION
+First token of a location phrase that describes where an object currently is.
+
+I-OBJECT_LOCATION
+Continuation token of a describing object location phrase.
+
+B-TARGET_LOCATION
+First token of a location phrase where an object should be moved or put down.
+
+I-TARGET_LOCATION
+Continuation token of a target location phrase.
+
+B-WALK_PLACE
+First token of a walk place.
+
+I-WALK_PLACE
+Continuation token of a multi-token walk place.
+
+B-WALK_WEATHER
+First token of weather information for a walk.
+
+I-WALK_WEATHER
+Continuation token of multi-token weather information, such as "dry weather" or "wet weather".
+
+B-WALK_LENGTH
+Walk length such as short, medium, long, quick, brief, normal, regular, far, extended.
+
+B-BEFORE_SENTENCE_SPLIT
+The token that splits the shoe phrase from the tool phrase in CLEAN, IMPREGNATE, and REPAIR commands and the shoe in question is described befor the split word. Usually this is the case for: with, using, or by using.
+
+B-AFTER_SENTENCE_SPLIT
+The token that splits the shoe phrase from the tool phrase in CLEAN, IMPREGNATE, and REPAIR commands and the shoe in question is described after the split word. Usually this is the case for: use ... to, apply ... on,...
+
+B-TARGET_LOCATION_RELATION
+First token of a relation introducing a target location in MOVE or PUT_DOWN commands. on,in,into,onto,...
+
+I-TARGET_LOCATION_RELATION
+Continuation token of a multi-token target location relation.
+
+B-TARGET_NEXT_TO_RELATION
+First token of a relation introducing a target next-to object in MOVE or PUT_DOWN commands. usually 'next to' or 'beside'
+
+I-TARGET_NEXT_TO_RELATION
+Continuation token of a multi-token target next-to relation.
+
+B-LOCATION_RELATION
+First token of a relation introducing a describing object location, not a movement target. on,in,into,onto,...
+
+I-LOCATION_RELATION
+Continuation token of a multi-token describing location relation.
+
+B-NEXT_TO_RELATION
+First token of a describing next-to relation. usually 'next to' or 'beside'
+
+I-NEXT_TO_RELATION
+Continuation token of a multi-token describing next-to relation.
+
+
+Important relation rules
+########################
+
+For MOVE commands:
+------------------
+The last spatial relation in the command is the target relation.
+All earlier spatial relations describe the object that is being moved or put down.
+Examples:
+
+Command:
+move the green sandal next to the boot on the top shelf
+
+Interpretation:
+- "next to" describes the green sandal.
+- "boot" is the describing object.
+- "on" is the target location relation.
+- "top shelf" is the target location.
+
+Therefore:
+move O
+the O
+green B-COLOR
+sandal B-SHOE_TYPE
+next B-NEXT_TO_RELATION
+to I-NEXT_TO_RELATION
+the O
+boot B-SHOE_TYPE
+on B-TARGET_LOCATION_RELATION
+the O
+top B-TARGET_LOCATION
+shelf I-TARGET_LOCATION
+
+Command:
+move the boot next to the sandal on the middle shelf
+
+Interpretation:
+- "next to the sandal" describes the boot.
+- "on the middle shelf" is the placement target.
+
+Therefore:
+put O
+down O
+the O
+boot B-SHOE_TYPE
+next B-NEXT_TO_RELATION
+to I-NEXT_TO_RELATION
+the O
+sandal B-SHOE_TYPE
+on B-TARGET_LOCATION_RELATION
+the O
+middle B-TARGET_LOCATION
+shelf I-TARGET_LOCATION
+
+Command:
+move the boot on the floor to the top shelf
+
+Interpretation:
+
+- "on the floor" describes the current object location.
+- "to the top shelf" is the target.
+
+Therefore:
+move O
+the O
+boot B-SHOE_TYPE
+on B-LOCATION_RELATION
+the O
+floor B-OBJECT_LOCATION
+to B-TARGET_LOCATION_RELATION
+the O
+top B-TARGET_LOCATION
+shelf I-TARGET_LOCATION
+
+
+command:
+move the boot on the floor next to the sneaker
+
+Interpretation:
+
+- "on the floor" describes the current object location.
+- "to the top shelf" is the target.
+
+Therefore:
+move O
+the O
+boot B-SHOE_TYPE
+on B-LOCATION_RELATION
+the O
+floor B-OBJECT_LOCATION
+next B-TARGET_NEXT_TO_RELATION
+to I-TARGET_NEXT_TO_RELATION
+the O
+sneaker B-SHOE_TYPE
+
+
+For PUT_DOWN commands
+---------------------
+
+Here the logic is a little diffrent.
+The target relation is found in this order:
+-- first next to relation is the target relation, all following relations describe the object that is reffered to in this relation
+-- if there is no next to relation, then the first on/inside relation is the target relation all following on/inside relations are to be ignored.
+If a MOVE or PUT_DOWN command contains only one relation, that relation is the target relation.
+
+Command:
+move the boot to the floor
+
+move O
+the O
+boot B-SHOE_TYPE
+to B-TARGET_LOCATION_RELATION
+the O
+floor B-TARGET_LOCATION
+
+
+For PICK_UP, CLEAN, IMPREGNATE, DRY, REPAIR, GET_NEW_TOOL, and GO_ON_WALK commands:
+-----------------------------------------------------------------------------------
+
+Spatial relations usually describe the object, not a movement target.
+
+Command:
+pick up the boot on the floor
+
+pick O
+up O
+the O
+boot B-SHOE_TYPE
+on B-LOCATION_RELATION
+the O
+floor B-OBJECT_LOCATION
+
+
+Tool phrase split rule
+######################
+
+In CLEAN, IMPREGNATE, and REPAIR commands, label the split word between the shoe phrase and the tool phrase as B-BEFORE_SENTENCE_SPLIT or B-AFTER_SENTENCE_SPLIT.
+
+Typical split words:
+
+- with
+- using
+- by using
+- use ... to
+
+Command:
+clean the dirty boot with the brush
+
+clean O
+the O
+dirty B-CLEANING_STATUS
+boot B-SHOE_TYPE
+with B-BEFORE_SENTENCE_SPLIT
+the O
+brush B-CLEANING_TOOL_TYPE
+
+Command:
+use the brush to clean the dirty boot
+
+use O
+the O
+brush B-CLEANING_TOOL_TYPE
+to B-AFTER_SENTENCE_SPLIT
+clean O
+the O
+dirty B-CLEANING_STATUS
+boot B-SHOE_TYPE
+
+Command:
+repair the sole of the boot using the needle and yarn
+
+repair O
+the O
+sole B-REPAIR_TARGET
+of O
+the O
+boot B-SHOE_TYPE
+using B-BEFORE_SENTENCE_SPLIT
+the O
+needle B-REPAIR_TOOL_TYPE
+and I-REPAIR_TOOL_TYPE
+yarn I-REPAIR_TOOL_TYPE
+
+
+Multi-token slot rules
+######################
+
+Use B- for the first token of a slot and I- for continuation tokens.
+Examples:
+
+very dirty:
+very B-CLEANING_STATUS
+dirty I-CLEANING_STATUS
+
+medium dirty:
+medium B-CLEANING_STATUS
+dirty I-CLEANING_STATUS
+
+partly protected:
+partly B-IMPREGNATION_STATUS
+protected I-IMPREGNATION_STATUS
+
+top shelf:
+top B-TARGET_LOCATION or B-OBJECT_LOCATION
+shelf I-TARGET_LOCATION or I-OBJECT_LOCATION
+
+construction site:
+construction B-WALK_PLACE
+site I-WALK_PLACE
+
+parking lot:
+parking B-WALK_PLACE
+lot I-WALK_PLACE
+
+needle and yarn:
+needle B-REPAIR_TOOL_TYPE
+and I-REPAIR_TOOL_TYPE
+yarn I-REPAIR_TOOL_TYPE
+
+sole glue:
+sole B-REPAIR_TOOL_TYPE
+glue I-REPAIR_TOOL_TYPE
+
+30 percent:
+30 B-THRESHOLD
+percent I-THRESHOLD
+
+30 %:
+30 B-THRESHOLD
+% I-THRESHOLD
+
+30%:
+30% B-THRESHOLD
+
+
+Ambiguity rules
+###############
+
+If a word could belong to multiple slots, choose the slot that matches its semantic role in the command.
+Examples:
+
+"material" in "repair the material" is a repair target:
+material B-REPAIR_TARGET
+
+"canvas" in "canvas shoe" is a shoe material:
+canvas B-MATERIAL
+
+"dirty" in "dirty boot" is a cleaning status:
+dirty B-CLEANING_STATUS
+
+"muddy" in "muddy boot" is a dirt type:
+muddy B-DIRT_TYPE
+
+"wet" in "wet boot" is a dry status:
+wet B-DRY_STATUS
+
+"with" in tool commands is B-SENTENCE_SPLIT, not a relation.
+
+
+Articles and filler words such as the, a, an, please, me, my, this, that, of, from, down, up are usually O unless they are part of a multi-token canonical phrase.
+
+Do not normalize the tokens. Keep the original token text.
+Do not combine tokens.
+Do not skip tokens.
+
