@@ -113,7 +113,7 @@ The interactive Gradio application is provided in:
 ```
 notebooks/interactive_demo.ipynb
 ```
-Run the notebook from top to bottom to launch the application in the default web browser. The demo allows users to generate random worlds, select one of the three parsers, execute natural-language commands, and inspect the resulting dialogue and world state. The optional Stage 3 model checker can be enabled when a Hugging Face token is available (the notebook asks for the token if  HF_TOKEN environment variable is found).
+Run the notebook from top to bottom to launch the application in the default web browser. The demo allows users to generate random worlds, select one of the three parsers, execute natural-language commands, and inspect the resulting dialogue and world state. The optional Stage 3 model checker can be enabled when a Hugging Face token is available (the notebook asks for the token if no HF_TOKEN environment variable is found).
 
 
 ### Hugging Face API Access
