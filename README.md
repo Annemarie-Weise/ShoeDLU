@@ -46,7 +46,7 @@ An interactive Gradio demo is provided in `notebooks/interactive_demo.ipynb`. It
 
 ```
 git clone https://github.com/Annemarie-Weise/ShoeDLU.git
-cd ShoeDLU
+cd path/to/ShoeDLU
 ```
 
 ### 2. Create a virtual environment
